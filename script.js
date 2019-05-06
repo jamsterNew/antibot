@@ -43,7 +43,8 @@ window.onload = function() {
 
     const antibot = document.querySelectorAll('.antibot-click');
     for(let i = 0; i < antibot.length; i++) {
-        antibot[i].onclick = function() {
+        antibot[i].onclick = function(e) {
+            e.preventDefault();
             fetch('./antibot/phpcheck.php' , {
               'method': 'POST',
               'body': toSend
