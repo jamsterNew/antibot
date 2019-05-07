@@ -45,6 +45,9 @@ window.onload = function() {
     for(let i = 0; i < antibot.length; i++) {
         antibot[i].onclick = function(e) {
             e.preventDefault();
+            let toSend = {
+             "isAdmin": false
+            };
             fetch('./antibot/phpcheck.php' , {
               'method': 'POST',
               'body': toSend
